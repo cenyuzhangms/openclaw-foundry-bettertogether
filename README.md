@@ -47,13 +47,53 @@ The system has three layers:
 ### Request Flow
 
 ```text
-OpenClaw skill
-  -> local bridge on VM
-  -> fo-pocket-operator
-  -> specialist hosted agent
-  -> fo-pocket-operator
-  -> bridge
-  -> OpenClaw reply
++-------------------------------+
+| OpenClaw Control UI / Discord |
+| / Telegram                    |
++---------------+---------------+
+                |
+                v
++-------------------------------+
+| OpenClaw skill                |
+| foundry-status / diagnose /   |
+| smoke / change                |
++---------------+---------------+
+                |
+                v
++-------------------------------+
+| Local bridge on OpenClaw VM   |
+| normalize + auth + dispatch   |
++---------------+---------------+
+                |
+                v
++-------------------------------+
+| fo-pocket-operator            |
+| Foundry entrypoint agent      |
++---------------+---------------+
+                |
+                v
++-------------------+    +----------------------+
+| fo-inventory-     |    | fo-observability     |
+| health            |    | telemetry + RCA      |
++-------------------+    +----------------------+
+
++-------------------+    +----------------------+
+| fo-smoke          |    | fo-change-controller |
+| invoke + verify   |    | plan + redeploy      |
++-------------------+    +----------------------+
+
+                |
+                v
++-------------------------------+
+| fo-pocket-operator            |
+| aggregate + format result     |
++---------------+---------------+
+                |
+                v
++-------------------------------+
+| Bridge returns JSON           |
+| OpenClaw renders reply        |
++-------------------------------+
 ```
 
 ## Components
