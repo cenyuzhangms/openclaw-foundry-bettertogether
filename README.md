@@ -1,11 +1,11 @@
-# Pocket Foundry Operator
+# OpenClaw and Foundry Better Together
 
-Chat-native operations for Azure AI Foundry Hosted Agents, built with OpenClaw, a local bridge layer, and specialist Hosted Agents in Foundry.
+Chat-native operations for Microsoft Foundry Hosted Agents, built with OpenClaw, a local bridge layer, and specialist Hosted Agents in Foundry.
 
 This demo shows how to use:
 
 - **OpenClaw** as the user-facing control surface
-- **Azure AI Foundry Hosted Agents** as the managed runtime
+- **Microsoft Foundry Hosted Agents** as the managed runtime
 - **Microsoft Agent Framework patterns** for orchestrated specialist-agent workflows
 
 The result is a "Foundry operator in your pocket": ask for project health, diagnose agent issues, run smoke tests, and plan approved changes from a chat surface such as OpenClaw Control UI, Discord, or Telegram.
@@ -15,7 +15,7 @@ The result is a "Foundry operator in your pocket": ask for project health, diagn
 OpenClaw and Foundry are strong at different layers:
 
 - **OpenClaw** is strong at omnichannel ingress, chat UX, identity, and approvals
-- **Foundry Hosted Agents** are strong at managed deployment, identity, versioning, and Azure-native runtime
+- **Foundry Hosted Agents** are strong at managed deployment, identity, versioning, and Microsoft-native runtime
 - **Agent Framework-style orchestration** is strong at decomposing one operator request into specialized agent roles
 
 This demo keeps those concerns separate instead of collapsing everything into one monolithic chat agent.
@@ -149,7 +149,7 @@ All 5 Hosted Agents currently use the same Foundry model deployment, but their b
 
 - Azure subscription with:
   - one OpenClaw VM
-  - one Azure AI Foundry account + project
+  - one Microsoft Foundry account + project
   - one Azure Container Registry
   - one Application Insights resource
 - `foundry-agent` / `fa` CLI configured for the Foundry project
@@ -224,7 +224,7 @@ Recommended storytelling order:
 This demo is interesting because it combines three things that are usually shown separately:
 
 - **OpenClaw** gives you a practical omnichannel operator UX
-- **Foundry Hosted Agents** give you an Azure-native managed runtime
+- **Foundry Hosted Agents** give you a Microsoft-native managed runtime
 - **Agent Framework-style specialization** gives you modular workflows instead of one giant prompt-agent
 
 That means the demo is not "just another chatbot."
