@@ -1,0 +1,7 @@
+agent-framework==1.0.0b260107
+azure-ai-agentserver-agentframework==1.0.0b14
+azure-identity>=1.19.0
+azure-monitor-opentelemetry>=1.6.0
+azure-ai-projects
+python-dotenv==1.1.1
+starlette<1.0.0

@@ -1,0 +1,24 @@
+name: fo-pocket-operator
+description: >
+  Pocket Foundry Operator orchestrator for OpenClaw-driven status, diagnosis,
+  smoke tests, and approval-gated changes across hosted agents.
+metadata:
+  tags:
+    - AI Agent Hosting
+    - Agent Framework
+    - Foundry Operator
+template:
+  name: fo-pocket-operator
+  kind: hosted
+  protocols:
+    - protocol: responses
+      version: v1
+  environment_variables:
+    - name: AZURE_AI_PROJECT_ENDPOINT
+      value: ${AZURE_AI_PROJECT_ENDPOINT}
+    - name: MODEL_DEPLOYMENT_NAME
+      value: "{{chat}}"
+resources:
+  - kind: model
+    id: gpt-4.1-mini
+    name: chat

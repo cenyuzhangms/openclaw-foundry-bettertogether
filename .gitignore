@@ -1,0 +1,10 @@
+.env
+**/.env
+**/.foundry-agent.json
+**/.foundry-agent-build.log
+**/__pycache__/
+**/*.pyc
+.bridge-state.json
+.DS_Store
+Thumbs.db
+

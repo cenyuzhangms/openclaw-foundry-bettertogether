@@ -1,0 +1,22 @@
+name: fo-inventory-health
+description: >
+  Lists hosted agents in the Foundry project and summarizes health by latest version state.
+metadata:
+  tags:
+    - AI Agent Hosting
+    - Foundry Operator
+template:
+  name: fo-inventory-health
+  kind: hosted
+  protocols:
+    - protocol: responses
+      version: v1
+  environment_variables:
+    - name: AZURE_AI_PROJECT_ENDPOINT
+      value: ${AZURE_AI_PROJECT_ENDPOINT}
+    - name: MODEL_DEPLOYMENT_NAME
+      value: "{{chat}}"
+resources:
+  - kind: model
+    id: gpt-4.1-mini
+    name: chat

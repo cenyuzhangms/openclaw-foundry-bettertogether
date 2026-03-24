@@ -1,0 +1,23 @@
+name: fo-smoke
+description: >
+  Runs an on-demand smoke test against another Foundry hosted agent by invoking it through the Responses API.
+metadata:
+  tags:
+    - AI Agent Hosting
+    - Foundry Operator
+    - Verification
+template:
+  name: fo-smoke
+  kind: hosted
+  protocols:
+    - protocol: responses
+      version: v1
+  environment_variables:
+    - name: AZURE_AI_PROJECT_ENDPOINT
+      value: ${AZURE_AI_PROJECT_ENDPOINT}
+    - name: MODEL_DEPLOYMENT_NAME
+      value: "{{chat}}"
+resources:
+  - kind: model
+    id: gpt-4.1-mini
+    name: chat

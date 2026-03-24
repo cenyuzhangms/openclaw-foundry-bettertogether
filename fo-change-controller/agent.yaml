@@ -1,0 +1,23 @@
+name: fo-change-controller
+description: >
+  Produces approval-ready change plans and can redeploy the current hosted-agent definition as a new version after approval.
+metadata:
+  tags:
+    - AI Agent Hosting
+    - Agent Framework
+    - Change Control
+template:
+  name: fo-change-controller
+  kind: hosted
+  protocols:
+    - protocol: responses
+      version: v1
+  environment_variables:
+    - name: AZURE_AI_PROJECT_ENDPOINT
+      value: ${AZURE_AI_PROJECT_ENDPOINT}
+    - name: MODEL_DEPLOYMENT_NAME
+      value: "{{chat}}"
+resources:
+  - kind: model
+    id: gpt-4.1-mini
+    name: chat

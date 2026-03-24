@@ -1,0 +1,25 @@
+name: fo-observability
+description: >
+  Diagnoses hosted-agent issues by querying Application Insights telemetry connected to the Foundry project.
+metadata:
+  tags:
+    - AI Agent Hosting
+    - Foundry Operator
+    - Observability
+template:
+  name: fo-observability
+  kind: hosted
+  protocols:
+    - protocol: responses
+      version: v1
+  environment_variables:
+    - name: AZURE_AI_PROJECT_ENDPOINT
+      value: ${AZURE_AI_PROJECT_ENDPOINT}
+    - name: MODEL_DEPLOYMENT_NAME
+      value: "{{chat}}"
+    - name: APP_INSIGHTS_APP_ID
+      value: ${APP_INSIGHTS_APP_ID}
+resources:
+  - kind: model
+    id: gpt-4.1-mini
+    name: chat
